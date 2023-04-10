@@ -1,0 +1,26 @@
+version: '3.3'
+services:
+ app:
+   ports:
+     - "80:80"
+   build: .
+   volumes:
+     - ./src:/var/www/html
+   environment:
+     TZ: 'Asia/Tokyo'
+     FAKETIME: '+0d'
+#  db:
+#    image: mysql:5.7
+#    platform: linux/x86_64 # M1チップ対応
+#    environment:
+#      MYSQL_ROOT_PASSWORD: secret
+#      MYSQL_DATABASE: laravelapp
+#      MYSQL_USER: root
+#      MYSQL_PASSWORD: 
+#      TZ: 'Asia/Tokyo'
+#    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+#    volumes:
+#      - ./db/data/laravel_9:/var/lib/mysql
+#      - ./db/my.cnf:/etc/mysql/conf.d/my.cnf
+#    ports:
+#      - 3306:3306
